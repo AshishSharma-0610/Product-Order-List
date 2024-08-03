@@ -66,7 +66,7 @@ export class AppComponent {
 
     const orderList = this.finalOrders.map(order => `${order.quantity} ${order.name}`).join(', ');
     const apiKey = '5da54438161e40c8a9067c6b30c2c912';
-    const url = `http://api.voicerss.org/?key=${apiKey}&hl=en-us&v=Amy&src=${orderList}`;
+    const url = `https://api.voicerss.org/?key=${apiKey}&hl=en-us&v=Amy&src=${orderList}`;
 
     this.http.get(url, { responseType: 'blob' }).subscribe((response: Blob) => {
       const audioUrl = URL.createObjectURL(response);
