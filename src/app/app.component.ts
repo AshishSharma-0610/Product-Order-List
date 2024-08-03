@@ -78,15 +78,15 @@ export class AppComponent {
   updateName(event: Event, index: number) {
     const selectElement = event.target as HTMLSelectElement;
     this.orders[index].name = selectElement.value;
-    if (index === this.orders.length - 1 && this.orders.length < 8) {
-      this.addOrder();
-    }
     this.showFinalOrder = false;
   }
 
   updateQuantity(event: Event, index: number) {
     const selectElement = event.target as HTMLSelectElement;
     this.orders[index].quantity = selectElement.value === '' ? null : +selectElement.value;
+    if (index === this.orders.length - 1 && this.orders.length < 8) {
+      this.addOrder();
+    }
     this.showFinalOrder = false;
   }
 }
