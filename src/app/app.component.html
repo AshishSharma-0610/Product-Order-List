@@ -1,0 +1,46 @@
+<div class="container">
+  <h1>{{ title }}</h1>
+
+  <table>
+    <tr>
+      <th>Product Name</th>
+      <th>Quantity</th>
+      <th></th>
+    </tr>
+    <tr *ngFor="let order of orders; let i = index">
+      <td data-label="Product Name">
+        <select (change)="updateName($event, i)">
+          <option value="">Choose Product</option>
+          <option *ngFor="let product of products" [value]="product">{{ product }}</option>
+        </select>
+      </td>
+      <td data-label="Quantity">
+        <select (change)="updateQuantity($event, i)">
+          <option value="">Choose Quantity</option>
+          <option *ngFor="let qty of quantities" [value]="qty">{{ qty }}</option>
+        </select>
+      </td>
+      <td>
+        <button *ngIf="i === orders.length - 1 && orders.length < 8" (click)="addOrder()"
+          class="add-button">ADD</button>
+      </td>
+    </tr>
+  </table>
+
+  <div *ngIf="errorMessage" class="error-message">{{ errorMessage }}</div>
+
+  <button (click)="showOrder()" class="show-order-button">Show Order</button>
+
+  <table *ngIf="showFinalOrder" class="final-order-table">
+    <tr>
+      <th>Product Name</th>
+      <th>Quantity</th>
+    </tr>
+    <tr *ngFor="let order of finalOrders">
+      <td data-label="Product Name">{{ order.name }}</td>
+      <td data-label="Quantity">{{ order.quantity }}</td>
+    </tr>
+  </table>
+
+  <button (click)="getVoiceOrder()" class="what-is-my-order-button">What is my Order?</button>
+</div>

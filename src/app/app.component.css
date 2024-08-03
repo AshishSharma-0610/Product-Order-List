@@ -1,0 +1,132 @@
+.container {
+    font-family: Arial, sans-serif;
+    max-width: 600px;
+    width: 95%;
+    margin: 0 auto;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+h1 {
+    color: #026ae0f3;
+    text-align: center;
+    border-top: 2px solid #026ae0f3;
+    border-bottom: 2px solid #026ae0f3;
+    border-width: thin;
+    padding: 15px 15px;
+    font-size: 24px;
+    font-style: italic;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+th,
+td {
+    padding: 10px;
+    text-align: left;
+    border: 1px solid #ddd;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+select {
+    width: 100%;
+    padding: 5px;
+    box-sizing: border-box;
+}
+
+button {
+    background-color: #026ae0f3;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+button:hover {
+    background-color: #026ae0f3;
+}
+
+.add-button {
+    background-color: white;
+    color: black;
+    border: 1px solid rgb(4, 167, 4);
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 3px;
+    font-size: 12px;
+}
+
+.add-button:hover {
+    background-color: #e9eee9;
+}
+
+.show-order-button,
+.what-is-my-order-button {
+    display: block;
+    margin: 20px auto;
+    font-size: 16px;
+    width: 100%;
+    max-width: 200px;
+}
+
+.what-is-my-order-button {
+    background-color: #026ae0f3;
+}
+
+.final-order-table {
+    margin-top: 20px;
+}
+
+.error-message {
+    color: red;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+@media (max-width: 600px) {
+
+    table,
+    tr,
+    td {
+        display: block;
+    }
+
+    tr {
+        margin-bottom: 10px;
+    }
+
+    td {
+        border: none;
+        position: relative;
+        padding-left: 50%;
+    }
+
+    td:before {
+        content: attr(data-label);
+        position: absolute;
+        left: 6px;
+        width: 45%;
+        padding-right: 10px;
+        white-space: nowrap;
+        font-weight: bold;
+    }
+
+    th {
+        display: none;
+    }
+
+    .add-button {
+        display: block;
+        width: 100%;
+        margin-top: 10px;
+    }
+}
