@@ -84,9 +84,7 @@ export class AppComponent {
   updateQuantity(event: Event, index: number) {
     const selectElement = event.target as HTMLSelectElement;
     this.orders[index].quantity = selectElement.value === '' ? null : +selectElement.value;
-    if (index === this.orders.length - 1 && this.orders.length < 8) {
-      this.addOrder();
-    }
+  
     this.showFinalOrder = false;
   }
 }
